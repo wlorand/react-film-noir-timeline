@@ -1,0 +1,41 @@
+/**
+ * File: noir-timeline-app.css
+ * Desc: app-level styles for the noir-timeline-app (Noir Font defined here?)
+ */
+
+.app-container {
+  text-align: center; /* temp */
+}
+
+.tl-container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  position: relative;
+}
+
+/* timeline vertical centerline */
+.tl-container::after {
+  background-color: #e17b77;
+  content: '';
+  height: 100%;
+  left: calc(50% - 2px);
+  position: absolute;
+  width: 4px;
+}
+
+.tl-item {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  padding-right: 30px;
+  position: relative;
+  width: 50%;
+}
+
+.tl-item:nth-child(odd) {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-right: 0;
+}

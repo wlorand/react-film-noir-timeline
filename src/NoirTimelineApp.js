@@ -6,13 +6,16 @@ import NoirTimelineItem from './components/NoirTimelineItem';
 // data // TODO: fetch this data ++ put into state
 import filmNoirData from './data/filmNoirData';
 
+// styles
+import './noir-timeline-app.css';
+
 function NoirTimelineApp() {
   return (
-    <div>
+    <div className="app-container">
       <h1> Film Noir Timeline</h1>
-      <div className="timeline-container">
+      <div className="tl-container">
         {filmNoirData.map((film, i) => (
-          <NoirTimelineItem film={film} key={i} />
+          <NoirTimelineItem film={film} key={`${film.year}:${i}`} />
         ))}
       </div>
     </div>
