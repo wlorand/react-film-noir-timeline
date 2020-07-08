@@ -4,24 +4,21 @@ import React from 'react';
 import '../noir-timeline-app.css';
 
 function NoirTimelineItem({ film }) {
-  // do some destructuring of props
+  // destructure some props
   const { title, year, quote } = film;
 
   return (
     <div className="tl-item">
       <div className="tl-item-content">
         <span className="tl-tag">{year}</span>
-
         <p>{title}</p>
-
-        {quote}
-
+        <i>{quote}</i>
         <span className="tl-circle" />
       </div>
     </div>
   );
 }
 
-// TODO: Add PropTypes for some basic type-checking
+// TODO: Add PropTypes for some basic type-checking - best practice
 
 export default NoirTimelineItem;

@@ -1,6 +1,7 @@
 /**
  * File: noir-timeline-app.css
- * Desc: app-level styles for the noir-timeline-app (Noir Font defined here?)
+ * Desc: app-level styles for the noir-timeline-app 
+ * (Noir Font defined here?)
  */
 
 .app-container {
@@ -9,28 +10,30 @@
 
 .tl-container {
   display: flex;
+  /* recall for flexbox, pick a flex direction col or row */
   flex-direction: column;
   margin: 40px 0;
   position: relative;
 }
 
 /* timeline vertical centerline */
+/* powered by width and bgcolor and '' content */
 .tl-container::after {
   background-color: #e17b77;
   content: '';
   height: 100%;
-  left: calc(50% - 2px);
+  left: calc(50% - 2px); /* truly midway */
   position: absolute;
   width: 4px;
 }
 
 .tl-item {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /* justify */
   margin: 10px 0;
   padding-right: 30px;
   position: relative;
-  width: 50%;
+  width: 50%; /* key! - makes tl-item half the screen width */
 }
 
 .tl-item:nth-child(odd) {
@@ -38,4 +41,42 @@
   justify-content: flex-start;
   padding-left: 30px;
   padding-right: 0;
+}
+
+.tl-item-content {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px;
+  position: relative;
+  width: 400px;
+  max-width: 70%;
+  text-align: right;
+}
+
+.tl-item-content::after {
+  content: ' ';
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: -7.5px;
+  top: calc(50% - 7.5px);
+  /* this box rotation creates the triangle effect */
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+}
+
+.tl-item:nth-child(odd) .tl-item-content {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.tl-item:nth-child(odd) .tl-item-content::after {
+  right: auto;
+  left: -7.5px;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
