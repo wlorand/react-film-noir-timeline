@@ -2,12 +2,13 @@ const filmNoirData = [
   {
     title: 'Double Indemnity',
     year: '1944',
-    quote: 'Murder can sometime smell like honeysuckle',
+    quote:
+      'How could I have known that murder can sometime smell like honeysuckle?',
   },
   {
     title: 'Out of the Past',
     year: '1947',
-    quote: 'Doom and a twisted romance',
+    quote: 'How big a chump can you get to be? I was finding out.',
   },
   {
     title: 'Gun Crazy',
