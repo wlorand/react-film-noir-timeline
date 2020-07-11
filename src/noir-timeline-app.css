@@ -27,13 +27,14 @@
   width: 4px;
 }
 
+/* Timeline Item styles */
 .tl-item {
   display: flex;
   justify-content: flex-end; /* justify */
   margin: 10px 0;
   padding-right: 30px;
   position: relative;
-  width: 50%; /* key! - makes tl-item half the screen width */
+  width: calc(50% - 27px); /* 50% key! - makes tl-item half the screen width */
 }
 
 .tl-item:nth-child(odd) {
@@ -64,7 +65,7 @@
   position: absolute;
   right: -7.5px;
   top: calc(50% - 7.5px);
-  /* this box rotation creates the triangle effect */
+  /* this transform: rotate 45 creates the triangle effect */
   transform: rotate(45deg);
   width: 20px;
   height: 20px;
@@ -79,4 +80,47 @@
   right: auto;
   left: -7.5px;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* NEW 7-11 */
+.tl-item-content .tl-tag {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: bold;
+  top: 5px;
+  left: 5px;
+  letter-spacing: 1px;
+  padding: 5px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.tl-item:nth-child(odd) .tl-item-content .tl-tag {
+  left: auto;
+  right: 5px;
+}
+
+.tl-item-content p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 15px 0;
+  max-width: 450px;
+}
+
+.tl-item-content .tl-circle {
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(225, 123, 119);
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -40px;
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+}
+
+.tl-item:nth-child(odd) .tl-item-content .tl-circle {
+  right: auto;
+  left: -40px;
 }
