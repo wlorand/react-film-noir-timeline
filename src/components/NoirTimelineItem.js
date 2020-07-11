@@ -5,14 +5,19 @@ import '../noir-timeline-app.css';
 
 function NoirTimelineItem({ film }) {
   // destructure some props
-  const { title, year, quote } = film;
+  const { title, year, quote, posterUrl } = film;
 
   return (
     <div className="tl-item">
       <div className="tl-item-content">
         <span className="tl-tag">{year}</span>
         <p>{title}</p>
-        <i>{quote}</i>
+        <div>
+          <img src={posterUrl} width="300" />
+        </div>
+        <p>
+          <i>{quote}</i>
+        </p>
         <span className="tl-circle" />
       </div>
     </div>
