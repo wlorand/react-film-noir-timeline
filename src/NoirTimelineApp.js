@@ -15,7 +15,9 @@ function NoirTimelineApp() {
   return (
     films.length > 0 && (
       <div className="app-container">
-        <h1> Film Noir Timeline</h1>
+        <h1>
+          Film Noir Timeline <i>(1944-1958)</i>
+        </h1>
         <div className="tl-container">
           {films.map((film, i) => (
             <NoirTimelineItem film={film} key={`${film.year}:${i}`} />
